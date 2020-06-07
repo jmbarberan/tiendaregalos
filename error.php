@@ -21,10 +21,10 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center">
-            <span class="icon-check_circle display-3 text-success"></span>
-            <h2 class="display-3 text-black">Thank you!</h2>
-            <p class="lead mb-5">Su pedido se completo con éxito.</p>
-            <p><a href="index.php" class="btn btn-sm btn-primary">Volver a comprar</a></p>
+            <span class="icon-warning display-3 text-warning"></span>
+            <h2 class="display-3 text-black">Lo sentimos</h2>
+            <p class="lead mb-5">No se pudo procesar su pedido.</p>
+            <p><a href="cart.php" class="btn btn-sm btn-primary">Volver a intentar</a></p>
           </div>
         </div>
       </div>
