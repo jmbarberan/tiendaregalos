@@ -1,4 +1,7 @@
 <?php 
+  if (session_status() != PHP_SESSION_ACTIVE) {
+    session_start();
+  }  
   include("./php/conexion.php");
   if(isset($_GET['id'])){
     $proId= $_GET['id'];

@@ -47,7 +47,7 @@
       $nombre="";
       $precio="";
       $imagen="";
-      $res= $conexion->query('select * from productos where id='.$_POST['id'])or die($conexion->error);
+      $res= $conexion->query('select * from productos where id='.$_POST['proid'])or die($conexion->error);
       $fila= mysqli_fetch_row($res);
       $nombre=$fila[1];
       $precio=$fila[3];

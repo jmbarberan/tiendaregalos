@@ -1,4 +1,3 @@
-
     <header class="site-navbar" role="banner">
       <div class="site-navbar-top">
         <div class="container">
@@ -23,9 +22,6 @@
                 <li><a href="../login.php" title="Acceder"><span class="icon icon-person"></span></a></li>
                   <li>
                     <?php 
-                      if (session_status() != PHP_SESSION_ACTIVE) {
-                        session_start();
-                      }
                       $conteoTag = '';
                       $rutaCart = '';
                       $rutaActual = basename($_SERVER ["PHP_SELF"]);;
