@@ -1,9 +1,12 @@
-<?php
+<?php 
+  if (session_status() != PHP_SESSION_ACTIVE) {
     session_start();
-    if(!isset($_SESSION['carrito'])){
-      header('Location: ./index.php');
-    }
-    $arreglo = $_SESSION['carrito'];
+  }
+  session_start();
+  if(!isset($_SESSION['carrito'])){
+    header('Location: ./index.php');
+  }
+  $arreglo = $_SESSION['carrito'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
