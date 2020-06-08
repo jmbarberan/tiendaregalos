@@ -10,23 +10,22 @@
 		$cli = 0;
 		// buscar por email
 		$res=$conexion->query("select id from clientes where email='".$_POST['c_email_address']."'") or die($conexion->error);
-		if (count($res) === 1) {
-			$fila=mysqli_fetch_row($res);
-			$cli=$fila[0];
+		if ($res->num_rows != 0) {
+			$fila= mysqli_fetch_row($res);
+			$cli= $fila[0];
 		} else  {
 			// Si no se encuentra por email se buscara por nombre
-			if (count($res) <= 0) {
-				$nom = rtrim($_POST['c_fname'] + " " + $_POST['c_lname']);
-				$res=$conexion->query("select id from clientes where nombres='".$nom."'") or die($conexion->error);
-				if (count($res) === 1) {
-					$cli=$fila[0];
-				}
+			$nom= rtrim($_POST['c_fname'] . " " . $_POST['c_lname']);
+			$res= $conexion->query("select id from clientes where nombres='".$nom."'") or die($conexion->error);
+			if ($res->num_rows != 0) {
+				$fila= mysqli_fetch_row($res);
+				$cli= $fila[0];
 			}
 		}
 		// Si no se encuentra el cliente se crea uno nuevo
-		if ($cli === 0) {
+		if ($cli == null || $cli == 0) {
 			// Insertar en la db y traer el id insertado
-			$nom= rtrim($_POST['c_fname'] + " " + $_POST['c_lname']);
+			$nom= rtrim($_POST['c_fname'] . " " . $_POST['c_lname']);
 			$telf= $_POST["c_phone"];
 			$mail= $_POST["c_email_address"];
 			$dir= rtrim($_POST['c_address'] . " " . $_POST['c_address2']);
@@ -56,8 +55,7 @@
 			$itemQry = "INSERT INTO productos_venta (id_venta, id_producto, cantidad, precio, subtotal) VALUES (".$ven.", ".$pro.", ".$can.", ".$pre.", ".$subt.")";
 			$conexion->query($itemQry);
 		}
-		unset($_SESSION['carrito']);
-		
+		//unset($_SESSION['carrito']);
 		header("Location: ../thankyou.php");
 	} else {
 		header("Location: ../error.php");

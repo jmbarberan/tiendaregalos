@@ -1,13 +1,14 @@
 <?php 
   include("./php/conexion.php");
-  if( isset($_GET['id'])){
-    $resultado = $conexion ->query("select * from productos where id=".$_GET['id'])or die($conexion->error); 
+  if(isset($_GET['id'])){
+    $proId= $_GET['id'];
+    $resultado= $conexion ->query("select * from productos where id=".$_GET['id'])or die($conexion->error); 
     if(mysqli_num_rows($resultado) > 0 ){
-      $fila = mysqli_fetch_row($resultado);
-    }else{
+      $fila= mysqli_fetch_row($resultado);
+    } else {
       header("Location: ./index.php");
     }
-  }else{
+  } else {
     //redireaccionar
     header("Location: ./index.php");
   }
@@ -37,10 +38,10 @@
   
   <div class="site-wrap">
     <?php include("./layouts/header.php"); ?> 
-
     <div class="site-section">
       <div class="container">
-        <div class="row">
+        <form class="row" method="post" action="cart.php">
+          <input type="hidden" id="proid" name="proid" value="<?php echo $proId ?>">
           <div class="col-md-6">
             <img src="images/<?php echo $fila[4]; ?>" alt="<?php echo $fila[1]; ?>" class="img-fluid">
           </div>
@@ -49,38 +50,24 @@
             <p><?php echo $fila[2]; ?></p>
             <p><strong class="text-primary h4">$<?php echo $fila[3]; ?></strong></p>
             <div class="mb-1 d-flex">
-             <!--<div> <p>Seleccione el color de los globos:   </p></div>
-              
-              <label for="option-sm" class="d-flex mr-3 mb-3">
-                <span class="bg-danger color d-inline-block rounded-circle mr-2" style="top:-2px; position: relative;"><input type="radio" id="option-sm" name="shop-sizes"></span> <span class="d-inline-block text-black">Rojo</span>
-              </label>
-              <label for="option-md" class="d-flex mr-3 mb-3">
-                <span class="bg-success color d-inline-block rounded-circle mr-2" style="top:-2px; position: relative;"><input type="radio" id="option-md" name="shop-sizes"></span> <span class="d-inline-block text-black">Verde</span>
-              </label>
-              <label for="option-lg" class="d-flex mr-3 mb-3">
-                <span class="bg-info color d-inline-block rounded-circle mr-2" style="top:-2px; position: relative;"><input type="radio" id="option-lg" name="shop-sizes"></span> <span class="d-inline-block text-black">Azul</span>
-              </label>
-              <label for="option-xl" class="d-flex mr-3 mb-3">
-                <span class="bg-primary color d-inline-block rounded-circle mr-2"" style="top:-2px; position: relative;"><input type="radio" id="option-xl" name="shop-sizes"></span> <span class="d-inline-block text-black">Morado</span>
-              </label>
-            </div> -->
-            <div class="mb-5">
-              <div class="input-group mb-3" style="max-width: 120px;">
-              <div class="input-group-prepend">
-                <button class="btn btn-outline-primary js-btn-minus" type="button">&minus;</button>
+              <div class="mb-5">
+                <div class="input-group mb-3" style="max-width: 120px;">
+                <div class="input-group-prepend">
+                  <button class="btn btn-outline-primary js-btn-minus" type="button">&minus;</button>
+                </div>
+                <input type="text" class="form-control text-center" name="cantidad" value="1" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-primary js-btn-plus" type="button">&plus;</button>
+                </div>
               </div>
-              <input type="text" class="form-control text-center" value="1" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
-              <div class="input-group-append">
-                <button class="btn btn-outline-primary js-btn-plus" type="button">&plus;</button>
-              </div>
-            </div>
-
             </div>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <p><a href="cart.php?id=<?php echo $fila[0]; ?>" class="buy-now btn btn-sm btn-primary">Añadir al carrito</a></p>
-
+            <!--a href="cart.php?id=<?php echo $fila[0]; ?>&cantidad=" class="buy-now btn btn-sm btn-primary">Añadir al carrito</a-->
+            <p>
+              <input type="submit" value="Añadir al carrito" class="buy-now btn btn-sm btn-primary"/>
+            </p>
           </div>
-        </div>
+        </form>
       </div>
     </div>
 

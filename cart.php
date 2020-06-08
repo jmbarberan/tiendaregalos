@@ -1,41 +1,43 @@
 <?php
-  if(isset($_GET['id'])) {
+  if(isset($_POST['proid'])) {
     if (session_status() != PHP_SESSION_ACTIVE) {
       session_start();
     }
+  } else {
+
   }
   include './php/conexion.php';
   if (isset($_SESSION['carrito'])){
     //si existe buscamos si ya estaba agregado tal producto
-    if(isset($_GET['id'])){
+    if(isset($_POST['proid'])){
       $numero = 0;
       $arreglo = $_SESSION['carrito'];
       $encontro = false;
       for($i=0;$i<count($arreglo);$i++) {
-        if($arreglo[$i]['Id'] == $_GET['id']) {
+        if($arreglo[$i]['Id'] == $_POST['proid']) {
           $encontro=true;
           $numero=$i;
         }
       }
       if($encontro == true) {
-        $arreglo[$numero]['Cantidad']=$arreglo[$numero]['Cantidad']+1;
+        $arreglo[$numero]['Cantidad']=$arreglo[$numero]['Cantidad']+$_POST["cantidad"];
         $_SESSION['carrito']=$arreglo;
       }else{
         //no esta el registro 
       $nombre="";
       $precio="";
       $imagen="";
-      $res= $conexion->query('select * from productos where id='.$_GET['id'])or die($conexion->error);
+      $res= $conexion->query('select * from productos where id='.$_POST['proid'])or die($conexion->error);
       $fila= mysqli_fetch_row($res);
       $nombre=$fila[1];
       $precio=$fila[3];
       $imagen=$fila[4];
       $arregloNuevo= array(
-        'Id'=> $_GET['id'],
+        'Id'=> $_POST['proid'],
         'Nombre' => $nombre,
         'Precio' => $precio, 
         'Imagen' => $imagen,
-        'Cantidad' => 1
+        'Cantidad' => $_POST["cantidad"]
         );
       array_push($arreglo, $arregloNuevo);
       $_SESSION['carrito']=$arreglo;
@@ -43,21 +45,21 @@
     }
   }else{
     // se crea la variable de sesion nueva 
-    if (isset($_GET['id'])) {
+    if (isset($_POST['proid'])) {
       $nombre="";
       $precio="";
       $imagen="";
-      $res= $conexion->query('select * from productos where id='.$_GET['id'])or die($conexion->error);
+      $res= $conexion->query('select * from productos where id='.$_POST['id'])or die($conexion->error);
       $fila= mysqli_fetch_row($res);
       $nombre=$fila[1];
       $precio=$fila[3];
       $imagen=$fila[4];
       $arreglo[]= array(
-        'Id'=> $_GET['id'],
+        'Id'=> $_POST['proid'],
         'Nombre' => $nombre,
         'Precio' => $precio, 
         'Imagen' => $imagen,
-        'Cantidad' => 1
+        'Cantidad' => $_POST['cantidad']
       );
       $_SESSION['carrito']=$arreglo;
     }
