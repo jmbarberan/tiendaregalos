@@ -41,7 +41,7 @@
     <div class="site-section">
       <div class="container">
         <form class="row" method="post" action="cart.php">
-          <input type="hidden" id="proid" name="proid" value="<?php echo $proId ?>">
+          <input type="hidden" name="proid" value="<?php echo $proId ?>">
           <div class="col-md-6">
             <img src="images/<?php echo $fila[4]; ?>" alt="<?php echo $fila[1]; ?>" class="img-fluid">
           </div>

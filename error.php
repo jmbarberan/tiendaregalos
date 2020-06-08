@@ -22,10 +22,10 @@
         <div class="row">
           <div class="col-md-12 text-center">
             <span class="icon-warning display-3 text-warning"></span>
-            <h2 class="display-3 text-black">Lo sentimos</h2>
-            <p class="lead mb-5">No se pudo procesar su pedido.</p>
+            <h2 class="display-3 text-black"><?php if (isset($_GET["prd"])) { echo "No se puede eliminar"; } else { echo "Lo sentimos"; } ?></h2>
+            <p class="lead mb-5"><?php if (isset($_GET["prd"])) { echo "Este producto tiene pedidos registrados"; } else { echo "No se pudo procesar su pedido."; } ?></p>
             <p>
-              <a href="cart.php" class="btn btn-sm btn-primary">Volver a intentar</a>
+              <a href="<?php if (isset($_GET['prd'])) { echo 'productos.php'; } else { echo 'cart.php'; } ?>" class="btn btn-sm btn-primary"><?php if (isset($_GET['prd'])) { echo 'Volver al listado'; } else { echo 'Volver a intentar'; } ?></a>
             </p>
           </div>
         </div>

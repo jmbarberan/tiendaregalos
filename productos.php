@@ -2,11 +2,10 @@
 	if (session_status() != PHP_SESSION_ACTIVE) {
 		session_start();
 	}
-	/*if (!isset($_SESSION["usuario"])) {
+	if (!isset($_SESSION["usuario"])) {
 		header("Location: index.php");
 		return;
-	}*/
-
+	}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,7 +33,7 @@
 						<div class="col-md-6">
 							<div class="row mb-5">
 								<div class="col-md-6 mb-3 mb-md-0">
-									<button class="btn btn-outline-primary btn-sm btn-block" onclick="window.location='producto_crear.php'">Crear producto</button>
+									<button class="btn btn-outline-primary btn-sm btn-block" onclick="window.location='producto-editor.php'">Crear producto</button>
 								</div>
 							</div>
 						</div>
@@ -72,8 +71,9 @@
 												<?php echo $fila['inventario']; ?>
 											</td>
 											<td>
-												<a href="#" title="Modificar" class="btn btn-primary btn-sm btnModificar" data-id="<?php echo $fila['id']; ?>"><span class="icon icon-pencil"></span></a>
-												<a href="#" title="Eliminar" class="btn btn-danger btn-sm btnEliminar"  data-id="<?php echo $fila['id']; ?>"><span class="icon icon-minus"></span></a>
+												<a href="producto-editor.php?id=<?php echo $fila['id'] ?>" title="Modificar" class="btn btn-primary btn-sm btnModificar" data-id="<?php echo $fila['id']; ?>"><span class="icon icon-pencil"></span></a>
+												<br/>
+												<a href="./php/eliminarProducto.php?id=<?php echo $fila['id'] ?>" title="Eliminar" class="btn btn-danger btn-sm btnEliminar"  data-id="<?php echo $fila['id']; ?>"><span class="icon icon-minus"></span></a>
 											</td>
 										</tr>
 									<?php } ?>
@@ -87,4 +87,5 @@
 			<?php include("./layouts/footer.php"); ?> 
 		</div>
 	</body>
+
 </html>	
