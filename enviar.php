@@ -1,23 +1,24 @@
 <?php 
-//llamando a los campos//
-
-$nombre= $_POST['nombre'];
-$apellido= $_POST['apellido'];
-$correo= $_POST['correo'];
-$mensaje= $_POST['mensaje'];
+// Guardar en la db
+if ($_POST["correo"]) {
+    // Insertar en la db y traer el id insertado
+    $nom= rtrim($_POST['nombre'] . " " . $_POST['apellido']);
+    $mail= $_POST["correo"];
+    $msj= $_POST["mensaje"];
+    $cliQry= "INSERT INTO contactos (nombres, email, mensaje, fecha) VALUES ('".$nom."', '".$mail."', '".$msj."', now())";
+    $conexion->query($cliQry);
+}
 
 //datos para el correo//
 $destinatario = "bazarydetallesmym@gmail.com";
 $asunto="Contacto desde nuestra web";
 
-$carta= "De: $nombre \n";
-$carta .= "Apellidos: $apellido \n";
-$carta .= "Correo: $correo \n";
-$carta .= "Mensaje: $mensaje";
+$carta = "De: $nom \n";
+$carta .= "Correo: $mail \n";
+$carta .= "Mensaje: $msj";
 
 //enviando mensaje//
 mail($destinatario, $asunto, $carta);
-header('Location:mensaje-de-envio.php')
-
+header('Location:mensaje-de-envio.php');
 
 ?>

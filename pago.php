@@ -47,7 +47,7 @@
 								<div class="form-group row">
 									<div class="col-md-6">
 										<label for="c_fname" class="text-black">Nombre <span class="text-danger">*</span></label>
-										<input type="text" class="form-control" id="c_fname" name="c_fname" required="">
+										<input type="text" class="form-control" id="c_fname" name="c_fname" required>
 									</div>
 									<div class="col-md-6">
 										<label for="c_lname" class="text-black">Apellido <span class="text-danger">*</span></label>

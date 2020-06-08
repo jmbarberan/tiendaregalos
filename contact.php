@@ -4,19 +4,15 @@
     <title>Tienda MyM &mdash; </title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mukta:300,400,700"> 
     <link rel="stylesheet" href="fonts/icomoon/style.css">
-
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/magnific-popup.css">
     <link rel="stylesheet" href="css/jquery-ui.css">
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
-
-
     <link rel="stylesheet" href="css/aos.css">
-
     <link rel="stylesheet" href="css/style.css">
     
   </head>
@@ -32,9 +28,7 @@
             <h2 class="h3 mb-3 text-black">Para contactarnos, por favor rellenar el formulario</h2>
           </div>
           <div class="col-md-7">
-
             <form action="enviar.php" method="post">
-              
               <div class="p-3 p-lg-5 border">
                 <div class="form-group row">
                   <div class="col-md-6">
@@ -52,7 +46,6 @@
                     <input type="email" class="form-control" id="c_email" name="correo" placeholder="" required="">
                   </div>
                 </div>
-
                 <div class="form-group row">
                   <div class="col-md-12">
                     <label for="c_message" class="text-black">Mensaje </label>
