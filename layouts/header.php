@@ -1,4 +1,5 @@
-<header class="site-navbar" role="banner">
+
+    <header class="site-navbar" role="banner">
       <div class="site-navbar-top">
         <div class="container">
           <div class="row align-items-center">
@@ -19,6 +20,7 @@
             <div class="col-6 col-md-4 order-3 order-md-3 text-right">
               <div class="site-top-icons">
                 <ul>
+                <li><a href="../login.php" title="Acceder"><span class="icon icon-person"></span></a></li>
                   <li>
                     <?php 
                       if (session_status() != PHP_SESSION_ACTIVE) {
@@ -45,7 +47,6 @@
                 </ul>
               </div> 
             </div>
-
           </div>
         </div>
       </div> 
@@ -58,7 +59,14 @@
             <li>
               <a href="about.php">Acerca de Nosotros</a>
             </li>  
-            <li><a href="contact.php">Contacto</a></li>
+            <li>
+              <a href="contact.php">Contacto</a>
+            </li>
+            <?php 
+              if(isset($_SESSION['usuario'])) {
+                echo '<li><a href="productos.php">Productos</a></li>';
+              }
+            ?>
           </ul>
         </div>
       </nav>

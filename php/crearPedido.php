@@ -55,7 +55,7 @@
 			$itemQry = "INSERT INTO productos_venta (id_venta, id_producto, cantidad, precio, subtotal) VALUES (".$ven.", ".$pro.", ".$can.", ".$pre.", ".$subt.")";
 			$conexion->query($itemQry);
 		}
-		//unset($_SESSION['carrito']);
+		unset($_SESSION['carrito']);
 		header("Location: ../thankyou.php");
 	} else {
 		header("Location: ../error.php");

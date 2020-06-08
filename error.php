@@ -24,7 +24,9 @@
             <span class="icon-warning display-3 text-warning"></span>
             <h2 class="display-3 text-black">Lo sentimos</h2>
             <p class="lead mb-5">No se pudo procesar su pedido.</p>
-            <p><a href="cart.php" class="btn btn-sm btn-primary">Volver a intentar</a></p>
+            <p>
+              <a href="cart.php" class="btn btn-sm btn-primary">Volver a intentar</a>
+            </p>
           </div>
         </div>
       </div>

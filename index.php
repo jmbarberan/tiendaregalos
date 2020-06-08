@@ -4,23 +4,16 @@
     <title>Tienda</title>
     <meta charset="UTF-8">
 
-
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mukta:300,400,700"> 
     <link rel="stylesheet" href="fonts/icomoon/style.css">
-
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/magnific-popup.css">
     <link rel="stylesheet" href="css/jquery-ui.css">
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
-
-
     <link rel="stylesheet" href="css/aos.css">
-
     <link rel="stylesheet" href="css/style.css">
-    
   </head>
   <body>
   
@@ -29,10 +22,8 @@
 
     <div class="site-section">
       <div class="container">
-
         <div class="row mb-5">
           <div class="col-md-9 order-2">
-
             <div class="row">
               <div class="col-md-12 mb-5">
                 <div class="float-md-left mb-4"><h2 class="text-black h5">Productos</h2></div>

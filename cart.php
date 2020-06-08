@@ -3,8 +3,6 @@
     if (session_status() != PHP_SESSION_ACTIVE) {
       session_start();
     }
-  } else {
-
   }
   include './php/conexion.php';
   if (isset($_SESSION['carrito'])){
