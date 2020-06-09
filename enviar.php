@@ -1,6 +1,7 @@
 <?php 
 // Guardar en la db
 if ($_POST["correo"]) {
+    include('./php/conexion.php');
     // Insertar en la db y traer el id insertado
     $nom= rtrim($_POST['nombre'] . " " . $_POST['apellido']);
     $mail= $_POST["correo"];
@@ -10,7 +11,7 @@ if ($_POST["correo"]) {
 }
 
 //datos para el correo//
-$destinatario = "bazarydetallesmym@gmail.com";
+$destinatario = "jmbarberan@gmail.com";
 $asunto="Contacto desde nuestra web";
 
 $carta = "De: $nom \n";

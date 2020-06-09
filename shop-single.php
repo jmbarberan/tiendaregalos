@@ -90,7 +90,7 @@
                     <img src="images/regalo4.jpg" alt="Image placeholder" class="img-fluid">
                   </figure>
                   <div class="block-4-text p-4">
-                    <h3><a href="http://localhost/proyectotienda/shop-single.php?id=4#">CAJA BLANCA PERSONALIZADA CON ROSAS FUCSIAS, GIRASOLES, CHOCOLATES FERRERO Y LLAVERO PELUCHE</a></h3>
+                    <h3><a href="shop-single.php?id=4">CAJA BLANCA PERSONALIZADA CON ROSAS FUCSIAS, GIRASOLES, CHOCOLATES FERRERO Y LLAVERO PELUCHE</a></h3>
                     <p class="mb-0">INFORMACIÓN DETALLADA DE LO QUE INCLUYE:</p>
                     <p class="text-primary font-weight-bold">$50</p>
                   </div>
@@ -102,7 +102,7 @@
                     <img src="images/regalo5.jpg" alt="Image placeholder" class="img-fluid">
                   </figure>
                   <div class="block-4-text p-4">
-                    <h3><a href="http://localhost/proyectotienda/shop-single.php?id=5">CAJA GIGANTE PERSONALIZADA CON ROSAS, GIRASOLES Y CHOCOLATES FERRERO</a></h3>
+                    <h3><a href="shop-single.php?id=5">CAJA GIGANTE PERSONALIZADA CON ROSAS, GIRASOLES Y CHOCOLATES FERRERO</a></h3>
                     <p class="mb-0">INFORMACIÓN DETALLADA DE LO QUE INCLUYE:</p>
                     <p class="text-primary font-weight-bold">$65</p>
                   </div>
@@ -114,7 +114,7 @@
                     <img src="images/regalo6.jpg" alt="Image placeholder" class="img-fluid">
                   </figure>
                   <div class="block-4-text p-4">
-                    <h3><a href="http://localhost/proyectotienda/shop-single.php?id=6">CAJA PERSONALIZADA CON GIRASOLES Y CHOCOLATES FERRERO</a></h3>
+                    <h3><a href="shop-single.php?id=6">CAJA PERSONALIZADA CON GIRASOLES Y CHOCOLATES FERRERO</a></h3>
                     <p class="mb-0">INFORMACIÓN DETALLADA DE LO QUE INCLUYE:</p>
                     <p class="text-primary font-weight-bold">$59</p>
                   </div>

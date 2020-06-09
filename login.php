@@ -16,7 +16,7 @@
 		<link rel="stylesheet" href="css/style.css">
 		<style type="text/css">
 			.login-form {
-				width: 340px;
+				width: 480px;
 					margin: 50px auto;
 			}
 				.login-form form {

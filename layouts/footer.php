@@ -50,7 +50,7 @@
             Copyright &copy;
             <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
             <script>document.write(new Date().getFullYear());</script> Todos los derechos reservados | 
-            Steeven Villón, Melissa Plúas ITSG <i class="icon-heart" aria-hidden="true"></i>
+            Steeven Villón, Melissa Plúas ITSG  <i class="icon-heart" aria-hidden="true"></i>
         
             </p>
           </div>
