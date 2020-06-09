@@ -11,7 +11,7 @@ if ($_POST["correo"]) {
 }
 
 //datos para el correo//
-$destinatario = "jmbarberan@gmail.com";
+$destinatario = "bazarydetallesmym@gmail.com";
 $asunto="Contacto desde nuestra web";
 
 $carta = "De: $nom \n";

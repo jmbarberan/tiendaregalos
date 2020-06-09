@@ -2,7 +2,6 @@
   if (session_status() != PHP_SESSION_ACTIVE) {
     session_start();
   }
-  session_start();
   if(!isset($_SESSION['carrito'])){
     header('Location: ./index.php');
   }
@@ -132,8 +131,8 @@
 												}
 											?>
 											<tr>
-												<td>Orden Total </td>
-												<td>$<?php echo number_format($total, 2, '.', ''); ?> </td>
+												<td>Total del pedido</td>
+												<td class="text-right">$<?php echo number_format($total, 2, '.', ''); ?> </td>
 											</tr>
 										</tbody>
 									</table>
@@ -147,7 +146,7 @@
 									</div>
 									<div class="form-group">
 										<input type="hidden" id="total" name="total" value="<?php echo $total ?>">
-                    <input type="submit" class="btn btn-primary btn-lg py-3 btn-block">Realizar Pedido</button>
+                    <input type="submit" class="btn btn-primary btn-lg py-3 btn-block" value="Realizar Pedido"></button>
                   </div>
 								</div>
 							</div>
