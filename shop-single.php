@@ -126,7 +126,7 @@
                     <img src="images/regalo7.jpg" alt="Image placeholder" class="img-fluid">
                   </figure>
                   <div class="block-4-text p-4">
-                    <h3><a href="http://localhost/proyectotienda/shop-single.php?id=7">CAJA SORPRESA PARA UN HINCHA 100% AMARILLO (BARCELONA ECUADOR)</a></h3>
+                    <h3><a href="shop-single.php?id=7">CAJA SORPRESA PARA UN HINCHA 100% AMARILLO (BARCELONA ECUADOR)</a></h3>
                     <p class="mb-0">INFORMACIÓN DETALLADA DE LO QUE INCLUYE:</p>
                     <p class="text-primary font-weight-bold">$40</p>
                   </div>
@@ -138,7 +138,7 @@
                     <img src="images/regalo8.jpg" alt="Image placeholder" class="img-fluid">
                   </figure>
                   <div class="block-4-text p-4">
-                    <h3><a href="http://localhost/proyectotienda/shop-single.php?id=8">CAJA PERSONALIZADA CON ROSAS, CHOCOLATES FERRERO Y PELUCHE OSO</a></h3>
+                    <h3><a href="shop-single.php?id=8">CAJA PERSONALIZADA CON ROSAS, CHOCOLATES FERRERO Y PELUCHE OSO</a></h3>
                     <p class="mb-0">INFORMACIÓN DETALLADA DE LO QUE INCLUYE:</p>
                     <p class="text-primary font-weight-bold">$55</p>
                   </div>
