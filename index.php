@@ -154,7 +154,7 @@
         </div>
       </div>
     </div>
-    <?php include("./layouts/header.php"); ?> 
+    <?php include("./layouts/footer.php"); ?> 
   </div>
 
   <script src="js/jquery-3.3.1.min.js"></script>

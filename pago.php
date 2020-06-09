@@ -35,13 +35,13 @@
 							</div>
 						</div>
 					</div>
-					<form class="row" action="./php/crearPedido.php" method="post" novalidate="novalidate">
+					<form class="row" action="./php/crearPedido.php" method="post">
 						<div class="col-md-6 mb-5 mb-md-0">
 							<h2 class="h3 mb-3 text-black">Detalles de Facturación</h2>
 							<div class="p-3 p-lg-5 border">
 								<div class="form-group">
 									<label for="c_country" class="text-black">País <span class="text-danger">*</span></label>
-									<select id="c_country" class="form-control">
+									<select id="c_country" class="form-control" required>
 										<option value="1">Seleccione el país</option>    
 										<option value="2">Ecuador</option>        
 									</select>
@@ -53,13 +53,13 @@
 									</div>
 									<div class="col-md-6">
 										<label for="c_lname" class="text-black">Apellido <span class="text-danger">*</span></label>
-										<input type="text" class="form-control" id="c_lname" name="c_lname" required="">
+										<input type="text" class="form-control" id="c_lname" name="c_lname" required>
 									</div>
 								</div>
 								<div class="form-group row">
 									<div class="col-md-12">
 										<label for="c_address" class="text-black">Dirección <span class="text-danger">*</span></label>
-										<input type="text" class="form-control" id="c_address" name="c_address" placeholder="Direccion del domicilio" required="">
+										<input type="text" class="form-control" id="c_address" name="c_address" placeholder="Direccion del domicilio" required>
 									</div>
 								</div>
 								<div class="form-group">
@@ -68,21 +68,21 @@
 								<div class="form-group row">
 									<div class="col-md-6">
 										<label for="c_state_country" class="text-black">Ciudad<span class="text-danger">*</span></label>
-										<input type="text" class="form-control" id="c_state_country" name="c_state_country">
+										<input type="text" class="form-control" id="c_state_country" name="c_state_country" required>
 									</div>
 									<div class="col-md-6">
-										<label for="c_postal_zip" class="text-black">Código postal <span class="text-danger">*</span></label>
+										<label for="c_postal_zip" class="text-black">Código postal</label>
 										<input type="text" class="form-control" id="c_postal_zip" name="c_postal_zip">
 									</div>
 								</div>
 								<div class="form-group row mb-5">
 									<div class="col-md-6">
 										<label for="c_email_address" class="text-black">Email <span class="text-danger">*</span></label>
-										<input type="text" class="form-control" id="c_email_address" name="c_email_address" required="">
+										<input type="text" class="form-control" id="c_email_address" name="c_email_address" required>
 									</div>
 									<div class="col-md-6">
 										<label for="c_phone" class="text-black">Celular<span class="text-danger">*</span></label>
-										<input type="text" class="form-control" id="c_phone" name="c_phone" placeholder="" required="">
+										<input type="text" class="form-control" id="c_phone" name="c_phone" required>
 									</div>
 								</div>
 								<div class="form-group">
@@ -92,7 +92,7 @@
 											<div class="form-group row">
 												<div class="col-md-12">
 													<label for="c_diff_address" class="text-black">Dirección 2 <span class="text-danger">*</span></label>
-													<input type="text" class="form-control" id="c_diff_address" name="c_diff_address" placeholder="Street address" required="">
+													<input type="text" class="form-control" id="c_diff_address" name="c_diff_address" placeholder="Street address" required>
 												</div>
 											</div>
 											<div class="form-group">
@@ -103,7 +103,7 @@
 								</div>
 								<div class="form-group">
 									<label for="c_order_notes" class="text-black">Añade tus comentarios (opcional)</label>
-									<textarea name="c_order_notes" id="c_order_notes" cols="30" rows="5" class="form-control" placeholder="Write your notes here..."></textarea>
+									<textarea name="c_order_notes" id="c_order_notes" cols="30" rows="5" class="form-control"></textarea>
 								</div>
 							</div>
 
