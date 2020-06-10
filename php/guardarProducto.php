@@ -1,4 +1,7 @@
-<?php 
+<?php
+	if (session_status() != PHP_SESSION_ACTIVE) {
+		session_start();
+	}
 	if (isset($_POST["id"])) {
 		$qry = "INSERT INTO productos (nombre, descripcion, precio, imagen, inventario, id_categoria, ocasion) "; 
 		$qry .=	"values ('".$_POST["nombre"]."', '".$_POST["descripcion"]."', ".$_POST["precio"].", '".$_POST["imagen"]."', ".$_POST["inventario"].", ".$_POST["categoria"].", '".$_POST["ocasion"]."')";
@@ -13,7 +16,7 @@
 			}
 			$qry.= ", inventario = ".$_POST["inventario"];
 			$qry.= ", categoria = ".$_POST["categoria"];
-			$qry.= ", ocasion = '".$_POST["ocasion"]."')";	
+			$qry.= ", ocasion = '".$_POST["ocasion"]."' WHERE id =".$_POST["id"];	
 		}
 		include('conexion.php');
 		$conexion->query($qry);

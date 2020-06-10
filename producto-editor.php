@@ -50,7 +50,7 @@
 							<form action="./php/guardarProducto.php" method="post">
 								<div class="p-3 p-lg-5 border">
 									<div class="row">
-										<div class="col-md-8">
+										<div class="col-md-8"> 
 											<input type="text" hidden name="id" value="<?php echo $proId ?>">
 											<div class="form-group row">
 												<div class="col-md-6">
