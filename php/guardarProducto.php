@@ -15,7 +15,7 @@
 					$qry.= ", imagen = '".$_POST["imagen"] . "'";
 			}
 			$qry.= ", inventario = ".$_POST["inventario"];
-			$qry.= ", categoria = ".$_POST["categoria"];
+			$qry.= ", id_categoria = ".$_POST["categoria"];
 			$qry.= ", ocasion = '".$_POST["ocasion"]."' WHERE id =".$_POST["id"];	
 		}
 		include('conexion.php');
