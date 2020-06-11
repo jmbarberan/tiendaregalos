@@ -8,6 +8,7 @@
 		include('constantes.php');
 		// traer crear cliente
 		$cli = 0;
+		$nom= rtrim($_POST['c_fname'] . " " . $_POST['c_lname']);
 		// buscar por email
 		$res=$conexion->query("select id from clientes where email='".$_POST['c_email_address']."'") or die($conexion->error);
 		if ($res->num_rows != 0) {
@@ -15,7 +16,6 @@
 			$cli= $fila[0];
 		} else  {
 			// Si no se encuentra por email se buscara por nombre
-			$nom= rtrim($_POST['c_fname'] . " " . $_POST['c_lname']);
 			$res= $conexion->query("select id from clientes where nombres='".$nom."'") or die($conexion->error);
 			if ($res->num_rows != 0) {
 				$fila= mysqli_fetch_row($res);
@@ -25,7 +25,6 @@
 		// Si no se encuentra el cliente se crea uno nuevo
 		if ($cli == null || $cli == 0) {
 			// Insertar en la db y traer el id insertado
-			$nom= rtrim($_POST['c_fname'] . " " . $_POST['c_lname']);
 			$telf= $_POST["c_phone"];
 			$mail= $_POST["c_email_address"];
 			$dir= rtrim($_POST['c_address'] . " " . $_POST['c_address2']);
@@ -148,10 +147,13 @@
 		</html>
 		';
 
-		$headers = "MIME-Version: 1.0" . "\r\n";
-		$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+		$headers = "MIME-Version: 1.0\r\n";
+        $headers.= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 		$asunto= 'Su pedido en Bazar y Detalles MyM';
+		// Envia correo al cliente
 		mail($_POST['c_email_address'], $asunto, $msj, $headers);
+		// Enviar a correo de la empresa
+		mail('bazarydetallesmym@gmail.com', 'Pedido de: '.$nom, $msj, $headers);
 
 		unset($_SESSION['carrito']);
 		header("Location: ../thankyou.php");
