@@ -1,3 +1,8 @@
+<?php
+    if (session_status() != PHP_SESSION_ACTIVE) {
+		session_start();
+	}
+?>
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -60,6 +65,12 @@
 					</div>
 				</form>
 			</div>
+			<?php if (isset($_SESSION['login_error'])) {
+				echo '<div class="alert alert-warning" role="alert">
+				El Usuario y/o contraseña no son validos
+				</div>';
+				unset($_SESSION['login_error']);
+			} ?>
 		</div>
 	</body>
 </html>

@@ -7,16 +7,19 @@
         // buscar el usuario y la contraseña en la db
         include('conexion.php');
         $usr = 0;
-		$res=$conexion->query("select id from usuarios where correo='".$_POST['correo']."' AND clave='".$_POST['clave']."'") or die($conexion->error);
+        $cla = md5($_POST['clave']);
+		$res=$conexion->query("select id from usuarios where correo='".$_POST['correo']."' AND clave='".$cla."'") or die($conexion->error);
 		if ($res->num_rows != 0) {
 			$fila= mysqli_fetch_row($res);
             $usr= $fila[0];
-            $_SESSION["usuario"] = $usr;
+            $_SESSION["usuario"]= $usr;
             header("Location: ../productos.php");
 		} else  {
-            header("Location: ../index.php");    
+            $_SESSION['login_error']= true;
+            header("Location: ../login.php");    
         }
     } else {
-        header("Location: ../index.php");
+        $_SESSION['login_error']= true;
+        header("Location: ../login.php");
     }
 ?>
