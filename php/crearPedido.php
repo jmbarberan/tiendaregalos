@@ -158,7 +158,7 @@
 		$datosCli = '
 		<h1>Cliente: '.$nom.'</h1>
 		<h2>Direccion: '.$dir.'</h2>
-		<h2>Telefonos: '.$tel.'</h2>
+		<h2>Telefonos: '.$telf.'</h2>
 		<h2>Ciudad: '.$ciu.'</h2>
 		<h3>Comentarios: '.$com.'</h2>
 		';
