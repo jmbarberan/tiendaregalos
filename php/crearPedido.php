@@ -9,6 +9,12 @@
 		// traer crear cliente
 		$cli = 0;
 		$nom= rtrim($_POST['c_fname'] . " " . $_POST['c_lname']);
+		$telf= $_POST["c_phone"];
+		$mail= $_POST["c_email_address"];
+		$dir= rtrim($_POST['c_address'] . " " . $_POST['c_address2']);
+		$dir2= rtrim($_POST["c_diff_address"] . " " . $_POST["c_diff_address2"]);
+		$ciu= $_POST["c_state_country"];
+		$cod= $_POST["c_postal_zip"];
 		// buscar por email
 		$res=$conexion->query("select id from clientes where email='".$_POST['c_email_address']."'") or die($conexion->error);
 		if ($res->num_rows != 0) {
@@ -25,12 +31,6 @@
 		// Si no se encuentra el cliente se crea uno nuevo
 		if ($cli == null || $cli == 0) {
 			// Insertar en la db y traer el id insertado
-			$telf= $_POST["c_phone"];
-			$mail= $_POST["c_email_address"];
-			$dir= rtrim($_POST['c_address'] . " " . $_POST['c_address2']);
-			$dir2= rtrim($_POST["c_diff_address"] . " " . $_POST["c_diff_address2"]);
-			$ciu= $_POST["c_state_country"];
-			$cod= $_POST["c_postal_zip"];
 			$cliQry= "INSERT INTO clientes (nombres, email, telefono, direccion, direccion2, ciudad, codigo_postal) VALUES ('".$nom."', '".$mail."', '".$telf."', '".$dir."', '".$dir2."', '".$ciu."', '".$cod."')";
 			if ($conexion->query($cliQry)) {
 				$cli= $conexion->insert_id;
@@ -73,20 +73,21 @@
 			</td>
 			';
 		}
-		$msj = '
+		$msjHead = '
 		<html>
 		<head>
-		<title>Su pedido en Bazar y detalles M&M</title>
-		<link rel="stylesheet" href="'.BASE_URL.'/css/bootstrap.min.css">
-		<link rel="stylesheet" href="'.BASE_URL.'/css/magnific-popup.css">
-		<link rel="stylesheet" href="'.BASE_URL.'/css/jquery-ui.css">
-		<link rel="stylesheet" href="'.BASE_URL.'/css/owl.carousel.min.css">
-		<link rel="stylesheet" href="'.BASE_URL.'/css/owl.theme.default.min.css">
-		<link rel="stylesheet" href="'.BASE_URL.'/css/aos.css">
+			<title>Su pedido en Bazar y detalles M&M</title>
+			<link rel="stylesheet" href="'.BASE_URL.'/css/bootstrap.min.css">
+			<link rel="stylesheet" href="'.BASE_URL.'/css/magnific-popup.css">
+			<link rel="stylesheet" href="'.BASE_URL.'/css/jquery-ui.css">
+			<link rel="stylesheet" href="'.BASE_URL.'/css/owl.carousel.min.css">
+			<link rel="stylesheet" href="'.BASE_URL.'/css/owl.theme.default.min.css">
+			<link rel="stylesheet" href="'.BASE_URL.'/css/aos.css">
     	<link rel="stylesheet" href="'.BASE_URL.'/css/style.css">
 		</head>
-		<body>
-		<h1>Su pedido en Bazar y detalles M&M</h1>
+		<body>';
+
+		$msjBody = '	
 		<p>A continuacion se listan los productos adquiridos</p>
 		<div class="site-section">
       <div class="container">
@@ -148,12 +149,21 @@
 		';
 
 		$headers = "MIME-Version: 1.0\r\n";
-        $headers.= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+    $headers.= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 		$asunto= 'Su pedido en Bazar y Detalles MyM';
+		$msj = $msjHead.'<h1>Su pedido en Bazar y detalles M&M</h1>'.$msjBody;
 		// Envia correo al cliente
 		mail($_POST['c_email_address'], $asunto, $msj, $headers);
 		// Enviar a correo de la empresa
-		mail('bazarydetallesmym@gmail.com', 'Pedido de: '.$nom, $msj, $headers);
+		$datosCli = '
+		<h1>Cliente: '.$nom.'</h1>
+		<h2>Direccion: '.$dir.'</h2>
+		<h2>Telefonos: '.$tel.'</h2>
+		<h2>Ciudad: '.$ciu.'</h2>
+		<h3>Comentarios: '.$com.'</h2>
+		';
+		$msjEmp = $msjHead . $datosCli . $msjBody;
+		mail('bazarydetallesmym@gmail.com', 'Pedido de: '.$nom, $msjEmp, $headers);
 
 		unset($_SESSION['carrito']);
 		header("Location: ../thankyou.php");
